@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {UserCenterPage} from "../pages/user-center/user-center";
+import {RoutesService} from "../routes.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {UserCenterPage} from "../pages/user-center/user-center";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +40,8 @@ import {UserCenterPage} from "../pages/user-center/user-center";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RoutesService
   ]
 })
 export class AppModule {}

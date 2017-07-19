@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { NavController } from 'ionic-angular';
+import 'rxjs/add/operator/map';
+import {RoutesService} from "../../routes.service";
 
 @Component({
   selector: 'page-home',
@@ -7,10 +9,19 @@ import { NavController } from 'ionic-angular';
 })
 
 
-export class HomePage {
+export class HomePage implements OnInit{
+  imgarr = [];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+  public routes:RoutesService) {
 
+  }
+
+  ngOnInit():void{
+    this.routes.getImages().subscribe(data=>{
+      this.imgarr = data;
+      console.log(data)
+    });
   }
 
 
