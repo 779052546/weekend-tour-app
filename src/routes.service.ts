@@ -10,6 +10,11 @@ export class RoutesService{
   getImages(){
     return this.http.get('http://localhost:3000/dqtp')
       .map(res=>res.json().data)
-  };
+  }
+
+  gethotImages(){
+    return this.http.get('http://localhost:3000/dqtp/hot')
+      .map(res=>res.json().data)
+  }
 
 }

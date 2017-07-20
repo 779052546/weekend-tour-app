@@ -1,0 +1,55 @@
+<!--
+  Generated template for the HomeOnePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{imgdetail.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <img src="{{imgdetail.img}}"/>
+    <ion-card-content>
+      <p>{{imgdetail.name}}</p>
+      <p style="color: red;">￥{{imgdetail.price}}元</p>
+      <hr>
+      <p>游玩日期：{{imgdetail.date}}</p>
+      <hr>
+      <p>
+       <span class="big">简介</span><br>
+       {{imgdetail.desc}}
+      </p>
+      <hr>
+      <p>
+        <span class="big">参加须知</span><br>
+      <p>
+        · 预订截止时间：活动开始前 10 小时 <br>
+        · 参与凭证：电子票 <br>
+        · 成团要求：无，一人成团 <br>
+        · 活动开始前均可退款 <br>
+        · 费用包含：请查看费用描述，了解各个票种包含的服务。 <br>
+        · 自备物品：不需要 <br>
+      </p>
+      <hr>
+      <p>
+        <span class="big">温馨提示</span><br>
+        【消费方式】：凭[驴妈妈]发送的短信凭证消费
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col col-3><p style="color: red;">￥{{imgdetail.price}}元</p></ion-col>
+    <ion-col col-3></ion-col>
+    <ion-col col-6><button>我要参加</button></ion-col>
+  </ion-row>
+</ion-footer>

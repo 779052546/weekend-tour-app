@@ -1,32 +1,80 @@
 <ion-header class="header">
-  <ion-navbar class="navbar">
-    <ion-icon name="ios-search" class="search"></ion-icon>
-  </ion-navbar>
+    <ion-grid>
+    <ion-row>
+      <ion-col col-1><ion-icon name="ios-medal-outline" class="icons"></ion-icon></ion-col>
+      <ion-col col-10><input type="text"></ion-col>
+      <ion-col col-1><ion-icon name="ios-search" class="search"></ion-icon></ion-col>
+    </ion-row>
+    </ion-grid>
 </ion-header>
 
   <ion-content class="content">
     <ion-slides pager autoplay="3000" loop="true" class="lunbotu">
       <ion-slide>
-        <h1>Slide 1</h1>
+        <img src="http://static2.xialv.com/images/about/a_family_790x330.jpg">
       </ion-slide>
       <ion-slide>
-        <h1>Slide 2</h1>
+        <img src="http://site.image.nihaowang.com/siteimg/69/logo6687.jpg">
       </ion-slide>
       <ion-slide>
-        <h1>Slide 3</h1>
+        <img src="http://cyjctrip.qiniudn.com/126053/1401147161118p18ote1ipvlhl13sh1v2qs21a4u4.jpg">
       </ion-slide>
     </ion-slides>
 
+    <div class="icons-tubiao">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3><a href=""><ion-icon name="ios-browsers-outline"></ion-icon>
+              <br>全部项目</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-heart-outline"></ion-icon>
+            <br>热门推荐</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-map-outline"></ion-icon>
+            <br>景点门票</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-bicycle-outline"></ion-icon>
+            <br>户外运动</a></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3><a href=""><ion-icon name="ios-cafe-outline"></ion-icon>
+            <br>沙龙讲座</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-ionitron-outline"></ion-icon>
+            <br>演出赛事</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-analytics-outline"></ion-icon>
+            <br>展览</a></ion-col>
+          <ion-col col-3><a href=""><ion-icon name="ios-boat-outline"></ion-icon>
+            <br>漂流</a></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
 
-      <div class="card-background">
-        <div class="card-background-page">
-          <ion-card *ngFor="let k of imgarr" style="float: left;">
-            <img src="{{k.img}}">
-            <div class="card-title">{{k.name}}</div>
-            <div class="card-subtitle">41 Listings</div>
-          </ion-card>
+
+    <div class="handpick">
+        <span>精选</span>
+        <div class="card-background">
+          <div class="card-background-page">
+            <ion-card *ngFor="let k of imgarr" style="float: left;" (click)="goonepage(k)">
+              <img src="{{k.img}}">
+              <div class="card-title">{{k.name}}</div>
+            </ion-card>
+          </div>
         </div>
       </div>
+
+    <div class="handpick">
+      <span>排行榜</span>
+      <ion-card *ngFor="let s of hotImgarr" (click)="goonepage(s)">
+        <img src="{{s.img}}"/>
+        <ion-card-content>
+          <ion-card-title>
+            {{s.paihang}} {{s.name}}
+          </ion-card-title>
+          <p>
+            {{s.desc}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
 
 
   </ion-content>

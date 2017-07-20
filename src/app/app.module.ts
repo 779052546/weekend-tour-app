@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {UserCenterPage} from "../pages/user-center/user-center";
 import {RoutesService} from "../routes.service";
 import {HttpModule} from "@angular/http";
+import {HomeOnePage} from "../pages/home-one/home-one";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpModule} from "@angular/http";
     ContactPage,
     HomePage,
     TabsPage,
-    UserCenterPage
+    UserCenterPage,
+    HomeOnePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import {HttpModule} from "@angular/http";
     ContactPage,
     HomePage,
     TabsPage,
-    UserCenterPage
+    UserCenterPage,
+    HomeOnePage
   ],
   providers: [
     StatusBar,

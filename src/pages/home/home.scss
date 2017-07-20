@@ -1,25 +1,66 @@
 page-home {
+  li{
+    list-style-type:none;
+  }
+  a{
+    text-decoration: none;
+  }
   .header{
     font-size: 24px;
+    background-color: #fff;
+  }
+  .header .icons{
+    width: 40px;
+  }
+  .header input{
+    height: 22px;
+    display: inline-block;
+    width: 100%;
+    border:1px solid #111;
+    padding-left:15px;
+  }
+  .header ion-navba{
+    background-color: #fff;
   }
   .header .search{
     float: right;
   }
-  .header .navbar{
-    height: 20px;
-  }
+
   .lunbotu{
     height: 180px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .lunbotu img{
-    height: 220px;
+    width: 100%;
   }
-  .content .kuang{
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    vertical-align: middle;
-    line-height:30px;
+
+  .icons-tubiao{
+    ion-row{
+      text-align: center;
+    }
+    ion-row a{
+      color: #666;
+      font-size:1.2em;
+    }
+  }
+
+  .handpick{
+    margin-top:10px;
+    position:relative;
+  }
+  .handpick span{
+    font-size: 1.4em;
+    position: relative;
+    left: 20px;
+  }
+  .handpick span::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 17px;
+    background-color: black;
+    left: -10px;
+    top: 3px;
   }
   .card-background{
     overflow-x: auto;
@@ -30,7 +71,6 @@ page-home {
     float: left;
     width: 1980px;
   }
-
 }
 .card-background-page {
   ion-card {
