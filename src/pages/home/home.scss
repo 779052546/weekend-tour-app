@@ -21,21 +21,32 @@ page-home {
     vertical-align: middle;
     line-height:30px;
   }
-
-  .card-background-page{
+  .card-background{
     overflow-x: auto;
   }
+  .card-background-page{
+    overflow: hidden;
+    height: 170px;
+    float: left;
+    width: 1980px;
+  }
+
 }
 .card-background-page {
   ion-card {
     position: relative;
     text-align: center;
+    width: 260px;
+    margin-right: 10px;
   }
-
+  img{
+    width: 260px;
+    height: 170px;
+  }
   .card-title {
     position: absolute;
     top: 36%;
-    font-size: 2.0em;
+    font-size: 1.5em;
     width: 100%;
     font-weight: bold;
     color: #fff;

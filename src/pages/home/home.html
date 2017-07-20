@@ -16,23 +16,21 @@
         <h1>Slide 3</h1>
       </ion-slide>
     </ion-slides>
+
+
+      <div class="card-background">
+        <div class="card-background-page">
+          <ion-card *ngFor="let k of imgarr" style="float: left;">
+            <img src="{{k.img}}">
+            <div class="card-title">{{k.name}}</div>
+            <div class="card-subtitle">41 Listings</div>
+          </ion-card>
+        </div>
+      </div>
+
+
   </ion-content>
 
-  <!--<ion-content class="card-background-page">-->
 
-      <!--<ion-card *ngFor="let k of imgarr" style="float: left;">-->
-        <!--<img src="{{k.img}}">-->
-        <!--<div class="card-title">{{k.name}}</div>-->
-        <!--<div class="card-subtitle">41 Listings</div>-->
-      <!--</ion-card>-->
 
-    <!--</ion-content>-->
-<div>
-  <ul>
-    <li *ngFor="let k of imgarr" style="float: left;">
-      <img src="{{k.img}}" alt="">
-      <p>{{k.name}}</p>
-    </li>
-  </ul>
-</div>
 
