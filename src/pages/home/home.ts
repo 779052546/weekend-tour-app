@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {RoutesService} from "../../routes.service";
@@ -7,7 +7,6 @@ import {RoutesService} from "../../routes.service";
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-
 
 export class HomePage implements OnInit{
   imgarr = [];
@@ -20,7 +19,7 @@ export class HomePage implements OnInit{
   ngOnInit():void{
     this.routes.getImages().subscribe(data=>{
       this.imgarr = data;
-      console.log(data)
+      console.log(this.imgarr)
     });
   }
 

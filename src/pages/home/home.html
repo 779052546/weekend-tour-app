@@ -4,36 +4,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-slides pager  autoplay="3000" loop="true" class="lunbotu">
+  <ion-content class="content">
+    <ion-slides pager autoplay="3000" loop="true" class="lunbotu">
+      <ion-slide>
+        <h1>Slide 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
 
-    <ion-slide>
-      <img src="../../assets/icon/户外/slz/a13-2.png" alt="">
-    </ion-slide>
+  <!--<ion-content class="card-background-page">-->
 
-    <ion-slide>
-      <img src="../../assets/icon/漂流/lcdxg-drift/2.png" alt="">
-    </ion-slide>
+      <!--<ion-card *ngFor="let k of imgarr" style="float: left;">-->
+        <!--<img src="{{k.img}}">-->
+        <!--<div class="card-title">{{k.name}}</div>-->
+        <!--<div class="card-subtitle">41 Listings</div>-->
+      <!--</ion-card>-->
 
-    <ion-slide>
-      <img src="../../assets/icon/沙龙讲座/reading/3.png" alt="">
-    </ion-slide>
+    <!--</ion-content>-->
+<div>
+  <ul>
+    <li *ngFor="let k of imgarr" style="float: left;">
+      <img src="{{k.img}}" alt="">
+      <p>{{k.name}}</p>
+    </li>
+  </ul>
+</div>
 
-    <ion-slide>
-      <img src="../../assets/icon/演出赛事/Runing man/3.png" alt="">
-    </ion-slide>
-
-    <ion-slide>
-      <img src="../../assets/icon/户外/slz/a13.png" alt="">
-    </ion-slide>
-
-  </ion-slides>
-  <div class="center">
-
-  </div>
-
-  <div class="content">
-    <span>人气TOP</span>
-
-  </div>
-</ion-content>
