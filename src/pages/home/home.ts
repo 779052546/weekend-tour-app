@@ -8,8 +8,6 @@ import {SljzPage} from "../sljz/sljz";
 import {YcssPage} from "../ycss/ycss";
 import {ZlPage} from "../zl/zl";
 import {PlPage} from "../pl/pl";
-import {ContactPage} from "../contact/contact";
-import {AboutPage} from "../about/about";
 import {YdhwPage} from "../ydhw/ydhw";
 
 @Component({
@@ -41,7 +39,12 @@ export class HomePage implements OnInit{
   goonepage(params?:object){
     this.navCtrl.push(HomeOnePage,{img:params})
   }
-
+  gohot(){
+    this.navCtrl.push(HotPage)
+  }
+  gopl(){
+    this.navCtrl.push(PlPage)
+  }
   hotPage(){
     this.navCtrl.push(HotPage)
   }

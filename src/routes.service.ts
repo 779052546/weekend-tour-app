@@ -46,4 +46,9 @@ export class RoutesService{
     return this.http.get('http://localhost:3000/dqtp/zlimg')
       .map(res=>res.json().data)
   }
+
+  jdImages(){
+    return this.http.get('http://localhost:3000/dqtp/jdimg')
+      .map(res=>res.json().data)
+  }
 }
