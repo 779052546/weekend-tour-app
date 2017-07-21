@@ -14,6 +14,12 @@ import {UserCenterPage} from "../pages/user-center/user-center";
 import {RoutesService} from "../routes.service";
 import {HttpModule} from "@angular/http";
 import {HomeOnePage} from "../pages/home-one/home-one";
+import {HotPage} from "../pages/hot/hot";
+import {SljzPage} from "../pages/sljz/sljz";
+import {YcssPage} from "../pages/ycss/ycss";
+import {ZlPage} from "../pages/zl/zl";
+import {PlPage} from "../pages/pl/pl";
+import {YdhwPage} from "../pages/ydhw/ydhw";
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import {HomeOnePage} from "../pages/home-one/home-one";
     HomePage,
     TabsPage,
     UserCenterPage,
-    HomeOnePage
+    HomeOnePage,
+    HotPage,
+    SljzPage,
+    YcssPage,
+    ZlPage,
+    PlPage,
+    YdhwPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +50,13 @@ import {HomeOnePage} from "../pages/home-one/home-one";
     HomePage,
     TabsPage,
     UserCenterPage,
-    HomeOnePage
+    HomeOnePage,
+    HotPage,
+    SljzPage,
+    YcssPage,
+    ZlPage,
+    PlPage,
+    YdhwPage
   ],
   providers: [
     StatusBar,

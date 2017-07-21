@@ -18,7 +18,7 @@ export class UserCenterPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserCenterPage');
+    //console.log('ionViewDidLoad UserCenterPage');
   }
 
 }

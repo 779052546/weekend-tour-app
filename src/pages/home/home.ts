@@ -1,8 +1,16 @@
 import {Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {App, NavController} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {RoutesService} from "../../routes.service";
 import {HomeOnePage} from "../home-one/home-one";
+import {HotPage} from "../hot/hot";
+import {SljzPage} from "../sljz/sljz";
+import {YcssPage} from "../ycss/ycss";
+import {ZlPage} from "../zl/zl";
+import {PlPage} from "../pl/pl";
+import {ContactPage} from "../contact/contact";
+import {AboutPage} from "../about/about";
+import {YdhwPage} from "../ydhw/ydhw";
 
 @Component({
   selector: 'page-home',
@@ -14,7 +22,8 @@ export class HomePage implements OnInit{
   hotImgarr = [];
 
   constructor(public navCtrl: NavController,
-  public routes:RoutesService) {
+  public routes:RoutesService,
+  public app:App) {
 
   }
 
@@ -31,6 +40,25 @@ export class HomePage implements OnInit{
 
   goonepage(params?:object){
     this.navCtrl.push(HomeOnePage,{img:params})
+  }
+
+  hotPage(){
+    this.navCtrl.push(HotPage)
+  }
+  sljzPage(){
+    this.navCtrl.push(SljzPage)
+  }
+  ycssPage(){
+    this.navCtrl.push(YcssPage)
+  }
+  zlPage(){
+    this.navCtrl.push(ZlPage)
+  }
+  plPage(){
+    this.navCtrl.push(PlPage)
+  }
+  ydhwPage(){
+    this.navCtrl.push(YdhwPage)
   }
 
 
