@@ -2,7 +2,7 @@
   <ion-title>
      <img class="icons" src="http://pic.35pic.com/normal/08/51/45/3347542_162802067300_2.jpg" alt="">
       周末精选
-      <ion-icon name="ios-search" class="search"></ion-icon>
+      <ion-icon name="ios-search" class="search" (click)="search()"></ion-icon>
   </ion-title>
 </ion-header>
 
@@ -22,8 +22,8 @@
     <div class="icons-tubiao">
       <ion-grid>
         <ion-row>
-          <ion-col col-3><a href=""><ion-icon name="ios-browsers-outline"></ion-icon>
-              <br>全部项目</a></ion-col>
+          <ion-col col-3><a (click)="jdpage()"><ion-icon name="ios-browsers-outline"></ion-icon>
+              <br>景点门票</a></ion-col>
           <ion-col col-3><a (click)="hotPage()"><ion-icon name="ios-heart-outline"></ion-icon>
             <br>热门推荐</a></ion-col>
           <ion-col col-3><a (click)="plPage()"><ion-icon name="ios-boat-outline"></ion-icon>
@@ -77,7 +77,7 @@
     <div class="handpick">
       <span>排行榜</span>
       <ion-card *ngFor="let s of hotImgarr" (click)="goonepage(s)">
-        <img src="{{s.img}}"/>
+        <img src="{{s.img}}" alt="">
         <ion-card-content>
           <ion-card-title>
             {{s.paihang}} {{s.name}}

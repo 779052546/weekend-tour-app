@@ -9,6 +9,7 @@ import {YcssPage} from "../ycss/ycss";
 import {ZlPage} from "../zl/zl";
 import {PlPage} from "../pl/pl";
 import {YdhwPage} from "../ydhw/ydhw";
+import {SearchPage} from "../search/search";
 
 @Component({
   selector: 'page-home',
@@ -45,6 +46,9 @@ export class HomePage implements OnInit{
   gopl(){
     this.navCtrl.push(PlPage)
   }
+  jdpage(){
+    this.navCtrl.parent.select(1)
+  }
   hotPage(){
     this.navCtrl.push(HotPage)
   }
@@ -64,6 +68,8 @@ export class HomePage implements OnInit{
     this.navCtrl.push(YdhwPage)
   }
 
-
+  search(){
+    this.navCtrl.push(SearchPage)
+  }
 
 }

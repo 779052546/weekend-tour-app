@@ -20,6 +20,7 @@ import {YcssPage} from "../pages/ycss/ycss";
 import {ZlPage} from "../pages/zl/zl";
 import {PlPage} from "../pages/pl/pl";
 import {YdhwPage} from "../pages/ydhw/ydhw";
+import {SearchPage} from "../pages/search/search";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {YdhwPage} from "../pages/ydhw/ydhw";
     YcssPage,
     ZlPage,
     PlPage,
-    YdhwPage
+    YdhwPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import {YdhwPage} from "../pages/ydhw/ydhw";
     YcssPage,
     ZlPage,
     PlPage,
-    YdhwPage
+    YdhwPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

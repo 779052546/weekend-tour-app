@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {RoutesService} from "../../routes.service";
 import {HomeOnePage} from "../home-one/home-one";
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the SljzPage page.
