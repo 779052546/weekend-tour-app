@@ -9,7 +9,7 @@
 <ion-content>
   <ion-card *ngFor="let k of jdimgarr">
 
-    <img src="{{k.img}}">
+    <img src="{{k.img}}" (click)="goonepage(k)">
 
     <ion-card-content (click)="goonepage(k)">
       <p style="font-weight: bold;font-size: 1.4em">{{k.name}}</p>
