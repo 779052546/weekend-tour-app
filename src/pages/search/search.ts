@@ -3,6 +3,12 @@ import { NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import 'rxjs/add/operator/map';
 import {RoutesService} from "../../routes.service";
+import {HomeOnePage} from "../home-one/home-one";
+import {PlPage} from "../pl/pl";
+import {SljzPage} from "../sljz/sljz";
+import {HotPage} from "../hot/hot";
+import {YcssPage} from "../ycss/ycss";
+import {ZlPage} from "../zl/zl";
 
 /**
  * Generated class for the SearchPage page.
@@ -18,7 +24,7 @@ import {RoutesService} from "../../routes.service";
 export class SearchPage implements OnInit{
   searcharr=[];
   searchQuery: string = '';
-  items: string[];
+  items=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
@@ -26,16 +32,13 @@ export class SearchPage implements OnInit{
   }
 
   ngOnInit():void{
-    this.routes.hotImages().subscribe(data=>{
+    this.routes.searchImages().subscribe(data=>{
       this.searcharr = data;
-      console.log(this.searcharr)
+      //console.log(this.searcharr)
     })
   }
   initializeItems() {
-    this.items = [
-      'Amsterdam',
-      'Bogota'
-    ];
+    this.items = this.searcharr;
   }
 
   ionViewDidLoad() {
@@ -52,7 +55,7 @@ export class SearchPage implements OnInit{
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
@@ -61,4 +64,23 @@ export class SearchPage implements OnInit{
     this.navCtrl.pop(HomePage);
   }
 
+  detail(params?:object){
+    this.navCtrl.push(HomeOnePage,{img:params})
+  }
+
+  pl(){
+    this.navCtrl.push(PlPage)
+  }
+  sljz(){
+    this.navCtrl.push(SljzPage)
+  }
+  yx(){
+    this.navCtrl.push(HotPage)
+  }
+  ycss(){
+    this.navCtrl.push(YcssPage)
+  }
+  zl(){
+    this.navCtrl.push(ZlPage)
+  }
 }

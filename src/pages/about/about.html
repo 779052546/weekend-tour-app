@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let k of jdimgarr" (click)="goonepage(k)">
+  <ion-card *ngFor="let k of jdimgarr">
 
     <img src="{{k.img}}">
 
-    <ion-card-content>
+    <ion-card-content (click)="goonepage(k)">
       <p style="font-weight: bold;font-size: 1.4em">{{k.name}}</p>
     </ion-card-content>
 
@@ -19,7 +19,7 @@
       <ion-col>
         <button ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
+          <div (click)="add()">{{zan}} Likes</div>
         </button>
       </ion-col>
       <ion-col>

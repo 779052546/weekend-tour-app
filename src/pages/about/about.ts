@@ -18,12 +18,14 @@ export class AboutPage implements OnInit{
   ngOnInit():void{
     this.routes.jdImages().subscribe(data=>{
       this.jdimgarr = data;
-      console.log(this.jdimgarr)
     })
   }
 
   goonepage(params?:object){
     this.navCtrl.push(HomeOnePage,{img:params})
   }
-
+  zan = 13;
+  add(){
+    this.zan++;
+  }
 }

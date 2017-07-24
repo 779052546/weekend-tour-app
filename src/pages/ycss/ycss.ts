@@ -24,7 +24,6 @@ export class YcssPage implements OnInit{
   ngOnInit():void{
     this.routes.ycssImages().subscribe(data=>{
       this.ycssimgarr = data;
-      console.log(this.ycssimgarr);
     })
   }
 
