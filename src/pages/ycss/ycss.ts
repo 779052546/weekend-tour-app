@@ -17,6 +17,8 @@ import {HomeOnePage} from "../home-one/home-one";
 export class YcssPage implements OnInit{
 
   ycssimgarr = [];
+  minPrice:object;
+  minP = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
   }
@@ -24,6 +26,12 @@ export class YcssPage implements OnInit{
   ngOnInit():void{
     this.routes.ycssImages().subscribe(data=>{
       this.ycssimgarr = data;
+      for (var i = 0;i<this.ycssimgarr.length;i++){
+        this.routes.minprice(this.ycssimgarr[i].id).subscribe(data=>{
+          this.minPrice = data;
+          this.minP.push(this.minPrice[0])
+        })
+      }
     })
   }
 

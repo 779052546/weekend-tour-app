@@ -7,6 +7,15 @@
 </ion-header>
 
   <ion-content class="content">
+
+    <!--<ion-refresher (ionRefresh)="doRefresh($event)">-->
+      <!--<ion-refresher-content-->
+        <!--pullingIcon="arrow-dropdown"-->
+        <!--pullingText="Pull to refresh"-->
+        <!--refreshingSpinner="circles"-->
+        <!--refreshingText="Refreshing...">-->
+      <!--</ion-refresher-content>-->
+    <!--</ion-refresher>-->
     <ion-slides pager autoplay="3000" loop="true" class="lunbotu">
       <ion-slide>
         <img src="http://static2.xialv.com/images/about/a_family_790x330.jpg">
@@ -90,6 +99,12 @@
           </p>
         </ion-card-content>
       </ion-card>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
     </div>
 
 

@@ -18,25 +18,56 @@
     <img src="{{imgdetail.img}}"/>
     <ion-card-content>
       <p>{{imgdetail.name}}</p>
-      <p style="color: red;">￥{{imgdetail.price}}元</p>
+      <p style="color: red;">￥{{imgdetail.price}}-{{maxPrice}}元</p>
       <hr>
       <p>游玩日期：{{imgdetail.date}}</p>
       <hr>
       <p>
        <span class="big">简介</span><br>
-       {{imgdetail.desc}}
-      </p>
+      <div [innerHTML]="imgdetail.desc"></div>
       <hr>
-      <p>
-        <span class="big">参加须知</span><br>
-      <p>
+      <p *ngFor="let statusArr of statusArr">
+        <span class="big">参加须知</span>
+        <br>
+        <br>
+
+        <ion-row style="text-align: center">
+          <ion-col col-4><ion-icon name="ios-card" class="iconbig"></ion-icon>
+            <br>{{statusArr.isBack}}</ion-col>
+          <ion-col col-4><ion-icon name="ios-heart-outline" class="iconbig"></ion-icon>
+            <br>{{statusArr.isAssurance}}</ion-col>
+          <ion-col col-4><ion-icon name="ios-people-outline" class="iconbig"></ion-icon>
+            <br>{{statusArr.minPerson}}人成团</ion-col>
+        </ion-row>
+        <ion-row style="text-align: center">
+          <ion-col col-4><ion-icon name="ios-happy-outline" class="iconbig"></ion-icon>
+            <br>{{statusArr.ageLimit}}</ion-col>
+          <ion-col col-4><ion-icon name="ios-wifi-outline" class="iconbig"></ion-icon>
+            <br>{{statusArr.isWifi}}</ion-col>
+          <ion-col col-4><ion-icon name="ios-car-outline" class="iconbig"></ion-icon>
+            <br>{{statusArr.isP}}</ion-col>
+        </ion-row>
+        <br>
+
         · 预订截止时间：活动开始前 10 小时 <br>
         · 参与凭证：电子票 <br>
-        · 成团要求：无，一人成团 <br>
+        · 成团要求：{{statusArr.minPerson}}人成团 <br>
         · 活动开始前均可退款 <br>
         · 费用包含：请查看费用描述，了解各个票种包含的服务。 <br>
         · 自备物品：不需要 <br>
       </p>
+      <hr>
+      <p>
+        <span class="big" *ngIf="idArr">票价详情</span><br>
+      </p>
+      <p>
+        <div *ngFor="let k of idArr">
+          <p>
+              {{k.name}}<br>
+              <a href="javascript:;" class="yihang" (click)="showAlert(k.detail)" >费用详情:{{k.detail}}</a>
+          </p>
+          <p style="color: red">￥{{k.price}}元<button class="sureBtn" style="float: right">购票</button></p>
+        </div>
       <hr>
       <p>
         <span class="big">温馨提示</span><br>
@@ -48,7 +79,7 @@
 
 <ion-footer>
   <ion-row>
-    <ion-col col-3><p style="color: red;">￥{{imgdetail.price}}元</p></ion-col>
+    <ion-col col-3><p style="color: red;">￥{{imgdetail.price}}-{{maxPrice}}元</p></ion-col>
     <ion-col col-3></ion-col>
     <ion-col col-6><button>我要参加</button></ion-col>
   </ion-row>

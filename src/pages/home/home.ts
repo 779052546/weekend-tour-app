@@ -19,6 +19,7 @@ import {SearchPage} from "../search/search";
 export class HomePage implements OnInit{
   imgarr = [];
   hotImgarr = [];
+  pageNum = 3;
 
   constructor(public navCtrl: NavController,
   public routes:RoutesService,
@@ -26,14 +27,29 @@ export class HomePage implements OnInit{
 
   }
 
+
   ngOnInit():void{
     this.routes.getImages().subscribe(data=>{
       this.imgarr = data;
     })
-
-    this.routes.gethotImages().subscribe(data=>{
+    this.getData();
+  }
+  getData(){
+    this.routes.gethotImages(this.pageNum).subscribe(data=>{
       this.hotImgarr = data;
     })
+  }
+
+  doInfinite(infiniteScroll) {
+    setTimeout(() => {
+      this.pageNum += 3;
+      if (this.pageNum > 10){
+        this.pageNum = 10;
+      }
+      this.getData();
+      console.log('Async operation has ended');
+      infiniteScroll.complete();
+    }, 1000);
   }
 
 

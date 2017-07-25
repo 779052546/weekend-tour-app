@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component, OnInit} from '@angular/core';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
+import {RoutesService} from "../../routes.service";
 
 /**
  * Generated class for the HomeOnePage page.
@@ -12,10 +13,62 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-home-one',
   templateUrl: 'home-one.html',
 })
-export class HomeOnePage {
+export class HomeOnePage implements OnInit{
   imgdetail;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  idArr=[];
+  statusArr=[];
+  maxPrice:number;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  public routes :RoutesService,
+  public alertCtrl:AlertController) {
     this.imgdetail = this.navParams.get('img');
+    //console.log(this.imgdetail);
+  }
+  showAlert(s){
+    let alert = this.alertCtrl.create({
+      title:'票价详情',
+      subTitle:s,
+      buttons:['确认']
+    });
+    alert.present();
+  }
+
+  ngOnInit():void{
+    this.routes.searchId(this.imgdetail.id).subscribe(data=>{
+      this.idArr = data;
+      //console.log(this.idArr);
+      if (this.imgdetail.price){
+        return;
+      }else{
+        this.maxPrice = this.imgdetail['maxprice'];
+        this.imgdetail.price = this.imgdetail['minprice'];
+
+        this.routes.statusId(this.imgdetail.id).subscribe(data=>{
+          this.statusArr = data;
+          //console.log(this.statusArr);
+          this.changeStatus('isBack','随时退','不可退')
+          this.changeStatus('isAssurance','有保险','无保险')
+          this.changeStatus('isWifi','有WIFI','无WIFI')
+          this.changeStatus('isP','有停车位','无停车位')
+          if (this.statusArr[0]['ageLimit'] == 0){
+            this.statusArr[0]['ageLimit']= '年龄无限制'
+          }else{
+            this.statusArr[0]['ageLimit']= '年龄有限制'
+          }
+
+          //console.log(this.statusArr)
+
+        })
+      }
+    })
+  }
+
+  changeStatus(can1,can2,can3){
+    if (this.statusArr[0][can1] == 1){
+      this.statusArr[0][can1]= can2
+    }else{
+      this.statusArr[0][can1]= can3
+    }
   }
 
   ionViewDidLoad() {

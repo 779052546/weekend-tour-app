@@ -1,5 +1,5 @@
 <!--
-  Generated template for the YcssPage page.
+  Generated template for the HotPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -12,10 +12,16 @@
 
 </ion-header>
 
-<ion-content class="card-background-page">
-  <div *ngFor="let k of ycssimgarr" (click)="goonepage(k)" class="ioncar">
+<ion-content>
+  <ion-card *ngFor="let k of minP" (click)="goonepage(k)" >
     <img src="{{k.img}}"/>
-    <div class="card-title">{{k.name}}</div>
-    <div class="card-subtitle">{{k.i}}</div>
-  </div>
+    <ion-card-content>
+      <ion-card-title>
+        {{k.name}}
+      </ion-card-title>
+      <p class="dingweijiage">
+        ￥ {{k.minprice}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -17,6 +17,8 @@ import {HomeOnePage} from "../home-one/home-one";
 })
 export class YdhwPage implements OnInit{
   ydhwimgarr = [];
+  minPrice:object;
+  minP = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
   }
@@ -24,6 +26,13 @@ export class YdhwPage implements OnInit{
   ngOnInit():void{
     this.routes.ydhwImages().subscribe(data=>{
       this.ydhwimgarr = data;
+
+      for (var i = 0;i<this.ydhwimgarr.length;i++){
+        this.routes.minprice(this.ydhwimgarr[i].id).subscribe(data=>{
+          this.minPrice = data;
+          this.minP.push(this.minPrice[0])
+        })
+      }
     })
   }
 

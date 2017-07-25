@@ -7,7 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let k of jdimgarr">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let k of minP">
 
     <img src="{{k.img}}" (click)="goonepage(k)">
 
@@ -30,7 +38,7 @@
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          ￥{{k.price}}
+          ￥{{k.minprice}}
         </ion-note>
       </ion-col>
     </ion-row>

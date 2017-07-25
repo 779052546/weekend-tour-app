@@ -17,12 +17,22 @@ import 'rxjs/add/operator/map';
 })
 export class SljzPage implements OnInit{
   sljzimgarr=[];
+  minPrice:object;
+  minP = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
   }
   ngOnInit():void{
     this.routes.sljzImages().subscribe(data=>{
       this.sljzimgarr = data;
+
+      for (var i = 0;i<this.sljzimgarr.length;i++){
+        this.routes.minprice(this.sljzimgarr[i].id).subscribe(data=>{
+          this.minPrice = data;
+          this.minP.push(this.minPrice[0])
+        })
+      }
     })
   }
 

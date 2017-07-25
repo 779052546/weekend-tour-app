@@ -17,6 +17,8 @@ import {HomeOnePage} from "../home-one/home-one";
 })
 export class PlPage implements OnInit{
   plimgarr = [];
+  minPrice:object;
+  minP = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
   }
@@ -24,7 +26,15 @@ export class PlPage implements OnInit{
   ngOnInit():void{
     this.routes.plImages().subscribe(data=>{
       this.plimgarr = data;
+
+      for (var i = 0;i<this.plimgarr.length;i++){
+        this.routes.minprice(this.plimgarr[i].id).subscribe(data=>{
+          this.minPrice = data;
+          this.minP.push(this.minPrice[0])
+        })
+      }
     })
+
   }
   ionViewDidLoad() {
     //console.log('ionViewDidLoad PlPage');

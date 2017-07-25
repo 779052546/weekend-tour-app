@@ -3,12 +3,28 @@ page-home-one {
     background: #fff;
   }
   .big{
-    font-size: 1.5em;
+    font-size: 1.3em;
+    font-weight: bold;
   }
   ion-footer button{
     background-color: #ff565d;
     color: #ffffff;
     width: 100%;
     height: 47px;
+  }
+  .yihang{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .sureBtn{
+    background-color: #ff565d;
+    color: white;
+  }
+
+  .iconbig{
+    font-size: 1.4em;
   }
 }

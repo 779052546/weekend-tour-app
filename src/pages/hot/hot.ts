@@ -17,6 +17,8 @@ import {HomeOnePage} from "../home-one/home-one";
 })
 export class HotPage implements OnInit{
   hotimgarr = [];
+  minPrice : object;
+  minP = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public routes:RoutesService,) {
   }
@@ -24,6 +26,14 @@ export class HotPage implements OnInit{
   ngOnInit():void{
     this.routes.hotImages().subscribe(data=>{
       this.hotimgarr = data;
+      //console.log(this.hotimgarr)
+
+      for (var i = 0;i<this.hotimgarr.length;i++){
+        this.routes.minprice(this.hotimgarr[i].id).subscribe(data=>{
+          this.minPrice = data;
+          this.minP.push(this.minPrice[0])
+        })
+      }
     })
   }
 
