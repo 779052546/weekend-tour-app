@@ -71,7 +71,7 @@ import { UserProvider } from '../providers/user/user';
     PlPage,
     YdhwPage,
     SearchPage,
-    HomeTwoPage
+    HomeTwoPage,
   ],
   imports: [
     BrowserModule,
@@ -106,7 +106,7 @@ import { UserProvider } from '../providers/user/user';
     PlPage,
     YdhwPage,
     SearchPage,
-    HomeTwoPage
+    HomeTwoPage,
   ],
   providers: [
     StatusBar,
