@@ -33,13 +33,7 @@ export class AboutPage implements OnInit{
     this.routes.jdImages().subscribe(data=>{
       this.jdimgarr = data;
       //console.log(this.jdimgarr)
-
-      for (var i = 0;i<this.jdimgarr.length;i++){
-        this.routes.minprice(this.jdimgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-      }
+      this.routes.callBack(this.jdimgarr,this.routes,this.minPrice,this.minP);
     })
 
   }

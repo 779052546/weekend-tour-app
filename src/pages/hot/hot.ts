@@ -28,12 +28,13 @@ export class HotPage implements OnInit{
       this.hotimgarr = data;
       //console.log(this.hotimgarr)
 
-      for (var i = 0;i<this.hotimgarr.length;i++){
-        this.routes.minprice(this.hotimgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-      }
+      // for (var i = 0;i<this.hotimgarr.length;i++){
+      //   this.routes.minprice(this.hotimgarr[i].id).subscribe(data=>{
+      //     this.minPrice = data;
+      //     this.minP.push(this.minPrice[0])
+      //   })
+      // }
+      this.routes.callBack(this.hotimgarr,this.routes,this.minPrice,this.minP);
     })
   }
 

@@ -26,12 +26,7 @@ export class YcssPage implements OnInit{
   ngOnInit():void{
     this.routes.ycssImages().subscribe(data=>{
       this.ycssimgarr = data;
-      for (var i = 0;i<this.ycssimgarr.length;i++){
-        this.routes.minprice(this.ycssimgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-      }
+      this.routes.callBack(this.ycssimgarr,this.routes,this.minPrice,this.minP);
     })
   }
 

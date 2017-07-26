@@ -36,23 +36,26 @@ export class HomePage implements OnInit{
   ngOnInit():void{
     this.routes.getImages().subscribe(data=>{
       this.imgarr = data;
-      for (var i = 0;i<this.imgarr.length;i++){
-        this.routes.minprice(this.imgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-        //console.log(this.minP)
-      }
+      // for (var i = 0;i<this.imgarr.length;i++){
+      //   this.routes.minprice(this.imgarr[i].id).subscribe(data=>{
+      //     this.minPrice = data;
+      //     this.minP.push(this.minPrice[0])
+      //   })
+      //   //console.log(this.minP)
+      // }
+
+      this.routes.callBack(this.imgarr,this.routes,this.minPrice,this.minP);
     })
     this.routes.gethotImages().subscribe(data=>{
       this.hotImgarr = data;
       //console.log(this.hotImgarr)
-      for (var i = 0;i<this.hotImgarr.length;i++){
-        this.routes.minprice(this.hotImgarr[i].id).subscribe(data=>{
-          this.minPrice1 = data;
-          this.minP1.push(this.minPrice1[0])
-        })
-      }
+      // for (var i = 0;i<this.hotImgarr.length;i++){
+      //   this.routes.minprice(this.hotImgarr[i].id).subscribe(data=>{
+      //     this.minPrice1 = data;
+      //     this.minP1.push(this.minPrice1[0])
+      //   })
+      // }
+      this.routes.callBack(this.hotImgarr,this.routes,this.minPrice1,this.minP1);
     })
   }
 

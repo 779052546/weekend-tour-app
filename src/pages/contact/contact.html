@@ -1,21 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      购物车
-    </ion-title>
-  </ion-navbar>
+  <ion-navbar text-center><h3>购物车</h3></ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="arrow-dropdown"
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles"
-      refreshingText="Refreshing...">
-    </ion-refresher-content>
-  </ion-refresher>
-  <ion-list>
-    <ion-list-header>正在开发,敬请期待!</ion-list-header>
-  </ion-list>
+  <!--<ion-refresher (ionRefresh)="doRefresh($event)">-->
+  <div *ngFor="let carshop of numArray" class="box">
+    <p class="viewname">景点名称:{{carshop.name}}<ion-icon name="trash" (click)="del(carshop)" class="del"></ion-icon></p>
+    <p class="ticketname">票价名称:{{carshop.tname}}</p>
+    <p class="price">价格:<span>￥{{carshop.price}}</span></p>
+    数量:<span (click)="jian(carshop)" class="dian">-</span>
+    <input type="number" placeholder="1" [(ngModel)]="carshop.amount">
+    <span (click)="jia(carshop)" class="dian">+</span>
+  </div>
+  <!--</ion-refresher>-->
+
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 text-left class="total">总金额:￥{{total}}</ion-col>
+      <ion-col text-right><button ion-button round (click)="zhifu(numArray)">立即支付</button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

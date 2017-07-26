@@ -26,13 +26,7 @@ export class SljzPage implements OnInit{
   ngOnInit():void{
     this.routes.sljzImages().subscribe(data=>{
       this.sljzimgarr = data;
-
-      for (var i = 0;i<this.sljzimgarr.length;i++){
-        this.routes.minprice(this.sljzimgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-      }
+      this.routes.callBack(this.sljzimgarr,this.routes,this.minPrice,this.minP);
     })
   }
 

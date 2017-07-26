@@ -1,5 +1,48 @@
 page-contact {
-  .toolbar div.toolbar-background-ios{
-    background: #fff;
+  .box {
+    width: 90%;
+    padding-left: 2%;
+    //padding-bottom: 10px;
+    height: 160px;
+    margin-bottom: 30px;
+    //background-color: #bbb;
+    margin-left: 10%;
+    border-bottom: 1px solid gray;
+  }
+  .box input {
+    width: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+  .box .viewname {
+    width: 100%;
+    height: 20px;
+    //line-height: 30px;
+    position: relative;
+  }
+  .box .viewname .del {
+    position: absolute;
+    right: 20px;
+  }
+  .box .dian {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+  }
+  .box .price span{
+    color: red;
+  }
+  .total {
+    margin: 15px;
+    height: 40px;
+    background-color: orange;
+    line-height: 32px;
+    font-size: 16px;
+    color: white;
   }
 }

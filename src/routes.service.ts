@@ -8,6 +8,16 @@ const url = 'http://localhost:3000/dqtp';
 @Injectable()
 export class RoutesService{
   constructor(public http:Http) {}
+
+  callBack(can1,can2,can3,can4){
+    for (var i = 0;i<can1.length;i++){
+      can2.minprice(can1[i].id).subscribe(data=>{
+        can3 = data;
+        can4.push(can3[0])
+      })
+      //console.log(this.minP)
+    }
+  }
   getImages(){
     return this.http.get(url)
       .map(res=>res.json().data)
@@ -85,4 +95,24 @@ export class RoutesService{
     return this.http.post(url+'/putcar',{viewspotsid,ticketid,price})
       .map(res=>res.json().data);
   }
+
+
+  //购物车
+  contactget(){
+    return this.http.get('http://localhost:3000/index/contactget')
+      .map(res=>res.json().data)
+  }
+  contactpost(ticketid:number){
+    return this.http.post('http://localhost:3000/index/contactpost',{ticketid})
+      .map(res=>res.json().data)
+  }
+  contactput(amount:number,id:number){
+    return this.http.put('http://localhost:3000/index/contactput',{amount,id})
+      .map(res=>res.json().data)
+  }
+  contactdel(id:number){
+    return this.http.delete('http://localhost:3000/index/contactdel/'+id)
+      .map(res=>res.json().data)
+  }
+
 }

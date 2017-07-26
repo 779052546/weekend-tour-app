@@ -26,13 +26,7 @@ export class ZlPage implements OnInit{
   ngOnInit():void{
     this.routes.zlImages().subscribe(data=>{
       this.zlimgarr = data;
-
-      for (var i = 0;i<this.zlimgarr.length;i++){
-        this.routes.minprice(this.zlimgarr[i].id).subscribe(data=>{
-          this.minPrice = data;
-          this.minP.push(this.minPrice[0])
-        })
-      }
+      this.routes.callBack(this.zlimgarr,this.routes,this.minPrice,this.minP);
     })
   }
 
