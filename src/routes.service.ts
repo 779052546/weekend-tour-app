@@ -78,4 +78,8 @@ export class RoutesService{
       .map(res=>res.json().data)
   }
 
+  putcar(viewspotsid:number,ticketid:number,price:number){
+    return this.http.post(url+'/putcar',{viewspotsid,ticketid,price})
+      .map(res=>res.json().data);
+  }
 }
