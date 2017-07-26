@@ -14,10 +14,14 @@ export class RoutesService{
       .map(res=>res.json().data)
   }
 
-  gethotImages(pageNum:number){
-    return this.http.get(url+'/hot/'+pageNum)
+  gethotImages(){
+    return this.http.get(url+'/hot')
       .map(res=>res.json().data)
   }
+  // gethotImages(pageNum:number){
+  //   return this.http.get(url+'/hot/'+pageNum)
+  //     .map(res=>res.json().data)
+  // }
 
   hotImages(){
     return this.http.get(url+'/hotimg')

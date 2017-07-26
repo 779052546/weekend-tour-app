@@ -75,17 +75,17 @@
         <span>精选</span>
         <div class="card-background">
           <div class="card-background-page">
-            <ion-card *ngFor="let k of imgarr" style="float: left;" (click)="gotwopage(k)">
+            <div *ngFor="let k of minP" style="float: left;" (click)="goonepage(k)">
               <img src="{{k.img}}">
               <div class="card-title">{{k.name}}</div>
-            </ion-card>
+            </div>
           </div>
         </div>
       </div>
 
     <div class="handpick">
       <span>排行榜</span>
-      <ion-card *ngFor="let s of hotImgarr" (click)="gotwopage(s)">
+      <ion-card *ngFor="let s of minP1" (click)="goonepage(s)">
         <img src="{{s.img}}" alt="">
         <ion-card-content>
           <ion-card-title>
@@ -93,16 +93,16 @@
           </ion-card-title>
           <p>限时特价</p>
           <p class="dingweipiaojia">
-            ￥{{s.price}}
+            ￥{{s.minprice}}
           </p>
         </ion-card-content>
       </ion-card>
-      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content
-          loadingSpinner="bubbles"
-          loadingText="Loading more data...">
-        </ion-infinite-scroll-content>
-      </ion-infinite-scroll>
+      <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">-->
+        <!--<ion-infinite-scroll-content-->
+          <!--loadingSpinner="bubbles"-->
+          <!--loadingText="Loading more data...">-->
+        <!--</ion-infinite-scroll-content>-->
+      <!--</ion-infinite-scroll>-->
     </div>
 
 

@@ -45,11 +45,13 @@ page-home {
   .handpick{
     margin-top:10px;
     position:relative;
+    padding:0 10px;
   }
   .handpick>span{
     font-size: 1.4em;
     position: relative;
     left: 20px;
+    display: block;
   }
   .handpick>span::before{
     content: '';
@@ -78,11 +80,11 @@ page-home {
     overflow: hidden;
     height: 170px;
     float: left;
-    width: 1980px;
+    width: 1780px;
   }
 }
 .card-background-page {
-  ion-card {
+  div {
     position: relative;
     text-align: center;
     width: 260px;
