@@ -45,7 +45,7 @@ export class HomeOnePage implements OnInit{
         this.routes.statusId(this.imgdetail.id).subscribe(data=>{
           this.statusArr = data;
           //console.log(this.statusArr);
-          this.changeStatus('isBack','随时退','不可退')
+          this.changeStatus('isBack','不可退','随时退')
           this.changeStatus('isAssurance','有保险','无保险')
           this.changeStatus('isWifi','有WIFI','无WIFI')
           this.changeStatus('isP','有停车位','无停车位')
