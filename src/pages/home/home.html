@@ -75,7 +75,7 @@
         <span>精选</span>
         <div class="card-background">
           <div class="card-background-page">
-            <ion-card *ngFor="let k of imgarr" style="float: left;" (click)="goonepage(k)">
+            <ion-card *ngFor="let k of imgarr" style="float: left;" (click)="gotwopage(k)">
               <img src="{{k.img}}">
               <div class="card-title">{{k.name}}</div>
             </ion-card>
@@ -85,15 +85,13 @@
 
     <div class="handpick">
       <span>排行榜</span>
-      <ion-card *ngFor="let s of hotImgarr" (click)="goonepage(s)">
+      <ion-card *ngFor="let s of hotImgarr" (click)="gotwopage(s)">
         <img src="{{s.img}}" alt="">
         <ion-card-content>
           <ion-card-title>
-            {{s.paihang}} {{s.name}}
+            {{s.paihang}}{{s.name}}
           </ion-card-title>
-          <p>
-            {{s.desc}}
-          </p>
+          <p>限时特价</p>
           <p class="dingweipiaojia">
             ￥{{s.price}}
           </p>

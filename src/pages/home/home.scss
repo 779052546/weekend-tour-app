@@ -46,12 +46,12 @@ page-home {
     margin-top:10px;
     position:relative;
   }
-  .handpick span{
+  .handpick>span{
     font-size: 1.4em;
     position: relative;
     left: 20px;
   }
-  .handpick span::before{
+  .handpick>span::before{
     content: '';
     position: absolute;
     width: 5px;
@@ -80,7 +80,6 @@ page-home {
     float: left;
     width: 1980px;
   }
-
 }
 .card-background-page {
   ion-card {

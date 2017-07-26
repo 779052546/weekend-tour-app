@@ -21,6 +21,7 @@ import {ZlPage} from "../pages/zl/zl";
 import {PlPage} from "../pages/pl/pl";
 import {YdhwPage} from "../pages/ydhw/ydhw";
 import {SearchPage} from "../pages/search/search";
+import {HomeTwoPage} from "../pages/home-two/home-two";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {SearchPage} from "../pages/search/search";
     ZlPage,
     PlPage,
     YdhwPage,
-    SearchPage
+    SearchPage,
+    HomeTwoPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import {SearchPage} from "../pages/search/search";
     ZlPage,
     PlPage,
     YdhwPage,
-    SearchPage
+    SearchPage,
+    HomeTwoPage
   ],
   providers: [
     StatusBar,

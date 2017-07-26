@@ -18,6 +18,7 @@ export class HomeOnePage implements OnInit{
   idArr=[];
   statusArr=[];
   maxPrice:number;
+  putcar;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes :RoutesService,
   public alertCtrl:AlertController) {
@@ -37,12 +38,10 @@ export class HomeOnePage implements OnInit{
     this.routes.searchId(this.imgdetail.id).subscribe(data=>{
       this.idArr = data;
       //console.log(this.idArr);
-      if (this.imgdetail.price){
-        return;
-      }else{
+
         this.maxPrice = this.imgdetail['maxprice'];
         this.imgdetail.price = this.imgdetail['minprice'];
-
+        //console.log(this.imgdetail)
         this.routes.statusId(this.imgdetail.id).subscribe(data=>{
           this.statusArr = data;
           //console.log(this.statusArr);
@@ -55,11 +54,8 @@ export class HomeOnePage implements OnInit{
           }else{
             this.statusArr[0]['ageLimit']= '年龄有限制'
           }
-
           //console.log(this.statusArr)
-
         })
-      }
     })
   }
 
@@ -73,6 +69,26 @@ export class HomeOnePage implements OnInit{
 
   ionViewDidLoad() {
 
+  }
+
+  alte(s,y,z){
+    this.routes.putcar(s,y,z).subscribe(data=>{
+      this.putcar = data;
+      if(this.putcar == 'success'){
+        this.showAlert1('添加购物车成功')
+      }else{
+        this.showAlert1('添加购物车失败,请重试!')
+      }
+    })
+  }
+
+  showAlert1(s){
+    let alert = this.alertCtrl.create({
+      title:'详情',
+      subTitle:s,
+      buttons:['确认']
+    });
+    alert.present();
   }
 
 }

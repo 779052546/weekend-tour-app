@@ -10,6 +10,7 @@ import {ZlPage} from "../zl/zl";
 import {PlPage} from "../pl/pl";
 import {YdhwPage} from "../ydhw/ydhw";
 import {SearchPage} from "../search/search";
+import {HomeTwoPage} from "../home-two/home-two";
 
 @Component({
   selector: 'page-home',
@@ -43,8 +44,10 @@ export class HomePage implements OnInit{
   doInfinite(infiniteScroll) {
     setTimeout(() => {
       this.pageNum += 3;
-      if (this.pageNum > 10){
-        this.pageNum = 10;
+      if (this.pageNum > 9){
+        this.pageNum = 9;
+        console.log('没有更多了');
+        return;
       }
       this.getData();
       console.log('Async operation has ended');
@@ -55,6 +58,10 @@ export class HomePage implements OnInit{
 
   goonepage(params?:object){
     this.navCtrl.push(HomeOnePage,{img:params})
+  }
+
+  gotwopage(params?:object){
+    this.navCtrl.push(HomeTwoPage,{img:params})
   }
   gohot(){
     this.navCtrl.push(HotPage)
