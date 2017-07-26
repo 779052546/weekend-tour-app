@@ -1,17 +1,40 @@
 page-user-center {
-  .header{
-    text-align: center;
+  .header .toolbar{
+    width: 100%;
   }
-  .header div{
-    padding-bottom:10px;
+  .toolbar .title{
+    width:90%;
+    float: left;
+    color:white;
+    line-height:30px;
+    position: relative;
+    left:50%;
+    -webkit-transform:translateX(-50%);
   }
-  .header .setings{
+  .toolbar .setings{
+    width:10%;
     float: right;
-    font-size: 30px;
+    font-size: 25px;
+    line-height:30px;
   }
-  .zhanghu{
-    margin-top: 80px;
-    margin-left: 30px;
-    font-size:100px;
+  .content .hezi{
+    width:100%;
+    display: block;
+  }
+  .hezi{
+    border-bottom:1px solid lightgray;
+    box-shadow: 1px 3px 5px gray;
+  }
+  .hezi  .zhanghu{
+    font-size: 100px;
+    position: relative;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+  }
+  span{
+    width:4rem;
+    display: block;
+    margin:0 auto;
+    text-align: center;
   }
 }
