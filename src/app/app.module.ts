@@ -10,7 +10,21 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import {UserCenterPage} from "../pages/user-center/user-center";
+import {SetPage} from "../pages/user-center/Set/Set";
+import {EditPage} from "../pages/user-center/Edit/Edit";
+import {SharePage} from "../pages/user-center/Share/Share";
+
+import {LoginPage} from "../pages/user-center/Login/Login";
+import {RegisterPage} from "../pages/user-center/Register/Register";
+import {LostpwdPage} from "../pages/user-center/Lostpwd/Lostpwd";
+import {OrderPage} from "../pages/user-center/Order/Order";
+import {MessagePage} from "../pages/user-center/Message/Message";
+import {AboutusPage} from "../pages/user-center/Aboutus/Aboutus";
+import {IdeaPage} from "../pages/user-center/Idea/Idea";
+import {ServicePage} from "../pages/user-center/Service/Service";
+
 import {RoutesService} from "../routes.service";
 import {HttpModule} from "@angular/http";
 import {HomeOnePage} from "../pages/home-one/home-one";
@@ -21,6 +35,12 @@ import {ZlPage} from "../pages/zl/zl";
 import {PlPage} from "../pages/pl/pl";
 import {YdhwPage} from "../pages/ydhw/ydhw";
 import {SearchPage} from "../pages/search/search";
+import {ChoosePage} from "../pages/user-center/Choose/Choose";
+import { UserProvider } from '../providers/user/user';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +50,18 @@ import {SearchPage} from "../pages/search/search";
     HomePage,
     TabsPage,
     UserCenterPage,
+    SetPage,
+    EditPage,
+    ChoosePage,
+    SharePage,
+    LoginPage,
+    RegisterPage,
+    LostpwdPage,
+    OrderPage,
+    MessagePage,
+    AboutusPage,
+    IdeaPage,
+    ServicePage,
     HomeOnePage,
     HotPage,
     SljzPage,
@@ -52,6 +84,18 @@ import {SearchPage} from "../pages/search/search";
     HomePage,
     TabsPage,
     UserCenterPage,
+    SetPage,
+    EditPage,
+    ChoosePage,
+    SharePage,
+    LoginPage,
+    RegisterPage,
+    LostpwdPage,
+    OrderPage,
+    MessagePage,
+    AboutusPage,
+    IdeaPage,
+    ServicePage,
     HomeOnePage,
     HotPage,
     SljzPage,
@@ -65,7 +109,8 @@ import {SearchPage} from "../pages/search/search";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RoutesService
+    RoutesService,
+    UserProvider
   ]
 })
 export class AppModule {}

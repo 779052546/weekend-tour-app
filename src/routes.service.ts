@@ -7,6 +7,7 @@ import {Http} from "@angular/http";
 const url = 'http://localhost:3000/dqtp';
 @Injectable()
 export class RoutesService{
+
   constructor(public http:Http) {}
   getImages(){
     return this.http.get(url)
