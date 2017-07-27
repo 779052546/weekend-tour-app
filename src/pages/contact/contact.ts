@@ -18,8 +18,8 @@ export class ContactPage implements OnInit {
   showAlert() {
     let alert = this.alertCtrl.create({
       title: '亲',
-      subTitle: '你真的忍心离我而去吗',
-      buttons: ['是的']
+      subTitle: '真的不能再少了',
+      buttons: ['好吧']
     });
     alert.present();
   }
@@ -51,6 +51,10 @@ export class ContactPage implements OnInit {
   }
   jian(all){
     all.amount -= 1;
+    if(all.amount<1){
+      all.amount = 1;
+      this.showAlert();
+    }
     this.contput(all.amount,all.id);
     this.getTotal();
   }
@@ -58,7 +62,7 @@ export class ContactPage implements OnInit {
     this.RoutesService.contactget().subscribe(data=>{
       // console.log(data);
       this.numArray = data;
-      console.log(this.numArray);
+      //console.log(this.numArray);
       this.getTotal();
     });
   }

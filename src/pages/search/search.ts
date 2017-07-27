@@ -25,6 +25,9 @@ export class SearchPage implements OnInit{
   searcharr=[];
   searchQuery: string = '';
   items=[];
+  minPrice:object;
+  minP = [];
+  isShow:boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public routes:RoutesService) {
@@ -35,10 +38,11 @@ export class SearchPage implements OnInit{
     this.routes.searchImages().subscribe(data=>{
       this.searcharr = data;
       //console.log(this.searcharr)
+      this.routes.callBack(this.searcharr,this.routes,this.minPrice,this.minP);
     })
   }
   initializeItems() {
-    this.items = this.searcharr;
+    this.items = this.minP;
   }
 
   ionViewDidLoad() {
@@ -55,8 +59,11 @@ export class SearchPage implements OnInit{
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
+        this.isShow = true;
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
+    }else{
+      this.isShow = false;
     }
   }
 

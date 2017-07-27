@@ -1,12 +1,14 @@
 page-contact {
+  .toolbar div.toolbar-background-ios{
+    background: #fff;
+  }
   .box {
-    width: 90%;
-    padding-left: 2%;
-    //padding-bottom: 10px;
-    height: 160px;
-    margin-bottom: 30px;
+    //width: 90%;
+    //padding-left: 2%;
+    //height: 160px;
+    margin-bottom: 20px;
     //background-color: #bbb;
-    margin-left: 10%;
+    //margin-left: 10%;
     border-bottom: 1px solid gray;
   }
   .box input {
@@ -27,22 +29,26 @@ page-contact {
   }
   .box .dian {
     display: inline-block;
-    width: 30px;
-    height: 20px;
-    line-height: 20px;
+    width: 1.4em;
+    height: 1.1em;
+    line-height: 1.1em;
     text-align: center;
-    background-color: #333;
-    color: white;
+    //background-color: #333;
+    color: black;
+    border: 1px solid #333;
+    font-size: 1.4em;
+  }
+  .del{
+    font-size: 1.7em;
+    color: #ff565d;
   }
   .box .price span{
     color: red;
   }
-  .total {
-    margin: 15px;
-    height: 40px;
-    background-color: orange;
-    line-height: 32px;
-    font-size: 16px;
-    color: white;
+  ion-footer button{
+    background-color: #ff565d;
+    color: #ffffff;
+    width: 100%;
+    height: 47px;
   }
 }

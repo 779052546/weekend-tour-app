@@ -82,10 +82,22 @@ export class HomeOnePage implements OnInit{
     })
   }
 
+  alt(){
+    this.showAlert2();
+  }
+
   showAlert1(s){
     let alert = this.alertCtrl.create({
       title:'详情',
       subTitle:s,
+      buttons:['确认']
+    });
+    alert.present();
+  }
+  showAlert2(){
+    let alert = this.alertCtrl.create({
+      title:'温馨提示',
+      subTitle:'请选择一种票价',
       buttons:['确认']
     });
     alert.present();

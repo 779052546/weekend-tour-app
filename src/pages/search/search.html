@@ -3,8 +3,8 @@
  <ion-row>
    <ion-col col-10>
      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-     <ion-list>
-       <ion-item *ngFor="let item of items" (click)="detail(item)" >
+     <ion-list *ngIf="isShow">
+       <ion-item *ngFor="let item of items" (click)="detail(item)">
          {{ item.name }}
        </ion-item>
      </ion-list>
