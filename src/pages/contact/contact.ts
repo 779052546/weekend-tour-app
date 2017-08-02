@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertController, NavController} from 'ionic-angular';
 import {RoutesService} from "../../routes.service";
-import {Http} from "@angular/http";
+//import {Http} from "@angular/http";
 
 @Component({
   selector: 'page-contact',
