@@ -17,12 +17,16 @@ export class ContactPage implements OnInit {
 
   }
   ngOnInit():void{
-    this.RoutesService.contactget().subscribe(data=>{
-      // console.log(data);
-      this.numArray = data;
-      //console.log(this.numArray);
-      this.getTotal();
-    });
+
+    setInterval(()=>{
+      this.RoutesService.contactget().subscribe(data=>{
+        // console.log(data);
+        this.numArray = data;
+        //console.log(this.numArray);
+        this.getTotal();
+      });
+    },1000)
+
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -45,6 +49,7 @@ export class ContactPage implements OnInit {
   }
 
   getTotal(){
+
     this.total =0;
     for (var i = 0; i < this.numArray.length; i++){
       this.total += this.numArray[i].price * this.numArray[i].amount;
@@ -65,7 +70,7 @@ export class ContactPage implements OnInit {
       this.contdel(this.sid);
       this.RoutesService.contactget().subscribe(data=>{
         // console.log(data);
-        this.numArray = data;
+          this.numArray = data;
       });
     }
   }
