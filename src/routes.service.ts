@@ -4,7 +4,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
-const url = 'http://localhost:3000/dqtp';
+const url = 'http://59.110.165.55:1009/dqtp';
 @Injectable()
 export class RoutesService{
 
@@ -100,19 +100,19 @@ export class RoutesService{
 
   //购物车
   contactget(){
-    return this.http.get('http://localhost:3000/index/contactget')
+    return this.http.get('http://59.110.165.55:1009/index/contactget')
       .map(res=>res.json().data)
   }
   contactpost(ticketid:number){
-    return this.http.post('http://localhost:3000/index/contactpost',{ticketid})
+    return this.http.post('http://59.110.165.55:1009/index/contactpost',{ticketid})
       .map(res=>res.json().data)
   }
   contactput(amount:number,id:number){
-    return this.http.put('http://localhost:3000/index/contactput',{amount,id})
+    return this.http.put('http://59.110.165.55:1009/index/contactput',{amount,id})
       .map(res=>res.json().data)
   }
   contactdel(id:number){
-    return this.http.delete('http://localhost:3000/index/contactdel/'+id)
+    return this.http.delete('http://59.110.165.55:1009/index/contactdel/'+id)
       .map(res=>res.json().data)
   }
 

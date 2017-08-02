@@ -12,8 +12,28 @@ export class ContactPage implements OnInit {
   sid;
   numArray = [];
   total = 0;
+  items = [];
   constructor(public navCtrl: NavController ,public alertCtrl: AlertController ,public RoutesService:RoutesService) {
 
+  }
+  ngOnInit():void{
+    this.RoutesService.contactget().subscribe(data=>{
+      // console.log(data);
+      this.numArray = data;
+      //console.log(this.numArray);
+      this.getTotal();
+    });
+  }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    setTimeout(() => {
+      this.items = [];
+      for (var i = 0; i < 30; i++) {
+        this.items.push( this.items.length );
+      }
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
   }
   showAlert() {
     let alert = this.alertCtrl.create({
@@ -57,14 +77,6 @@ export class ContactPage implements OnInit {
     }
     this.contput(all.amount,all.id);
     this.getTotal();
-  }
-  ngOnInit():void{
-    this.RoutesService.contactget().subscribe(data=>{
-      // console.log(data);
-      this.numArray = data;
-      //console.log(this.numArray);
-      this.getTotal();
-    });
   }
 
   contput(amount?:number,id?:number){
